@@ -1,2 +1,4 @@
 cache/
 *.sqlite
+.DS_Store
+.ipynb_checkpoints/
