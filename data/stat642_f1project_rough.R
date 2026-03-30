@@ -133,7 +133,7 @@ bb_df_analysis <- qualifying %>%
 team_names_2014 <- read.csv("team_names_2014.csv")
 
 bb_df_analysis_2 <- bb_df_analysis %>%
-  left_join(team_names_2014, by = c("constructorId", "year"))
+  left_join(team_names_2014, by = c("constructorId" = "Team_Id", "year" = "Year"))
 
 head(bb_df_analysis_2)
 bb_df_analysis$year
