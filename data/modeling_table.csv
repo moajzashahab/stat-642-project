@@ -17,15 +17,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,Singapore Grand Prix,51.114413075780085,False,colapinto,Alpine,Renault,1.0,90.982
 2025,Singapore Grand Prix,51.114413075780085,False,ocon,Haas F1 Team,,,90.989
 2025,Singapore Grand Prix,51.114413075780085,False,gasly,Alpine,Renault,1.0,91.261
-2025,Singapore Grand Prix,51.114413075780085,False,albon,Williams,Mercedes,0.0,
-2025,Singapore Grand Prix,51.114413075780085,False,albon,Williams,Mercedes,0.0,
-2025,Singapore Grand Prix,51.114413075780085,False,albon,Williams,Mercedes,0.0,
-2025,Singapore Grand Prix,51.114413075780085,False,albon,Williams,Mercedes,0.0,
-2025,Singapore Grand Prix,51.114413075780085,False,sainz,Williams,Mercedes,0.0,
-2025,Singapore Grand Prix,51.114413075780085,False,sainz,Williams,Mercedes,0.0,
-2025,Singapore Grand Prix,51.114413075780085,False,sainz,Williams,Mercedes,0.0,
-2025,Singapore Grand Prix,51.114413075780085,False,sainz,Williams,Mercedes,0.0,
-2025,Singapore Grand Prix,51.114413075780085,False,sainz,Williams,Mercedes,0.0,
 2019,German Grand Prix,65.06717850287907,False,hamilton,Mercedes,Mercedes,1.0,72.852
 2019,German Grand Prix,65.06717850287907,False,max_verstappen,Red Bull Racing,,,72.593
 2019,German Grand Prix,65.06717850287907,False,bottas,Mercedes,Mercedes,1.0,73.075
@@ -45,7 +36,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2019,German Grand Prix,65.06717850287907,False,albon,Toro Rosso,Honda,1.0,73.461
 2019,German Grand Prix,65.06717850287907,False,russell,Williams,Mercedes,0.0,74.721
 2019,German Grand Prix,65.06717850287907,False,kubica,Williams,Mercedes,0.0,74.839
-2019,German Grand Prix,65.06717850287907,False,vettel,Ferrari,Ferrari,1.0,
 2026,Australian Grand Prix,62.61022927689594,False,russell,Mercedes,,,79.507
 2026,Australian Grand Prix,62.61022927689594,False,antonelli,Mercedes,,,80.12
 2026,Australian Grand Prix,62.61022927689594,False,hadjar,Red Bull Racing,,,80.023
@@ -65,9 +55,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2026,Australian Grand Prix,62.61022927689594,False,alonso,Aston Martin,,,81.969
 2026,Australian Grand Prix,62.61022927689594,False,perez,Cadillac,,,82.605
 2026,Australian Grand Prix,62.61022927689594,False,bottas,Cadillac,,,83.244
-2026,Australian Grand Prix,62.61022927689594,,,Aston Martin,,,
-2026,Australian Grand Prix,62.61022927689594,False,,Red Bull Racing,,,
-2026,Australian Grand Prix,62.61022927689594,,,Williams,,,
 2019,Russian Grand Prix,65.06550218340611,False,leclerc,Ferrari,Ferrari,1.0,93.613
 2019,Russian Grand Prix,65.06550218340611,False,hamilton,Mercedes,Mercedes,1.0,93.23
 2019,Russian Grand Prix,65.06550218340611,False,vettel,Ferrari,Ferrari,1.0,93.032
@@ -268,9 +255,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2019,Japanese Grand Prix,66.00910470409713,False,ricciardo,Renault,Renault,1.0,89.822
 2019,Japanese Grand Prix,66.00910470409713,False,perez,Racing Point,Mercedes,0.0,90.344
 2019,Japanese Grand Prix,66.00910470409713,False,russell,Williams,Mercedes,0.0,90.364
-2019,Japanese Grand Prix,66.00910470409713,False,kevin_magnussen,Haas F1 Team,,,
-2019,Japanese Grand Prix,66.00910470409713,False,kevin_magnussen,Haas F1 Team,,,
-2019,Japanese Grand Prix,66.00910470409713,False,kubica,Williams,Mercedes,0.0,
 2024,São Paulo Grand Prix,32.859399684044234,False,norris,McLaren,Mercedes,0.0,90.944
 2024,São Paulo Grand Prix,32.859399684044234,True,russell,Mercedes,Mercedes,1.0,89.121
 2024,São Paulo Grand Prix,32.859399684044234,True,tsunoda,RB,,,89.172
@@ -330,11 +314,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,Azerbaijan Grand Prix,60.53984575835476,False,hulkenberg,Kick Sauber,,,102.916
 2025,Azerbaijan Grand Prix,60.53984575835476,False,gasly,Alpine,Renault,1.0,103.139
 2025,Azerbaijan Grand Prix,60.53984575835476,False,albon,Williams,Mercedes,0.0,103.778
-2025,Azerbaijan Grand Prix,60.53984575835476,False,ocon,Haas F1 Team,,,
-2025,Azerbaijan Grand Prix,60.53984575835476,False,ocon,Haas F1 Team,,,
-2025,Azerbaijan Grand Prix,60.53984575835476,False,ocon,Haas F1 Team,,,
-2025,Azerbaijan Grand Prix,60.53984575835476,False,ocon,Haas F1 Team,,,
-2025,Azerbaijan Grand Prix,60.53984575835476,False,ocon,Haas F1 Team,,,
 2019,Brazilian Grand Prix,61.22047244094488,False,max_verstappen,Red Bull Racing,,,68.242
 2019,Brazilian Grand Prix,61.22047244094488,False,vettel,Ferrari,Ferrari,1.0,68.556
 2019,Brazilian Grand Prix,61.22047244094488,False,hamilton,Mercedes,Mercedes,1.0,68.614
@@ -354,14 +333,12 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2019,Brazilian Grand Prix,61.22047244094488,False,stroll,Racing Point,Mercedes,0.0,69.536
 2019,Brazilian Grand Prix,61.22047244094488,False,russell,Williams,Mercedes,0.0,70.126
 2019,Brazilian Grand Prix,61.22047244094488,False,kubica,Williams,Mercedes,0.0,70.614
-2019,Brazilian Grand Prix,61.22047244094488,False,sainz,McLaren,Renault,0.0,
 2024,Qatar Grand Prix,70.68403908794788,False,max_verstappen,Red Bull Racing,,,81.579
 2024,Qatar Grand Prix,70.68403908794788,False,russell,Mercedes,Mercedes,1.0,81.241
 2024,Qatar Grand Prix,70.68403908794788,False,norris,McLaren,Mercedes,0.0,81.578
 2024,Qatar Grand Prix,70.68403908794788,False,piastri,McLaren,Mercedes,0.0,81.821
 2024,Qatar Grand Prix,70.68403908794788,False,leclerc,Ferrari,Ferrari,1.0,81.278
 2024,Qatar Grand Prix,70.68403908794788,False,hamilton,Mercedes,Mercedes,1.0,81.637
-2024,Qatar Grand Prix,70.68403908794788,False,sainz,Ferrari,Ferrari,1.0,81.447
 2024,Qatar Grand Prix,70.68403908794788,False,sainz,Ferrari,Ferrari,1.0,81.447
 2024,Qatar Grand Prix,70.68403908794788,False,alonso,Aston Martin,Mercedes,0.0,81.608
 2024,Qatar Grand Prix,70.68403908794788,False,perez,Red Bull Racing,,,81.675
@@ -415,7 +392,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2021,Monaco Grand Prix,43.66883116883117,False,alonso,Alpine,Renault,1.0,72.205
 2021,Monaco Grand Prix,43.66883116883117,False,latifi,Williams,Mercedes,0.0,72.366
 2021,Monaco Grand Prix,43.66883116883117,False,mazepin,Haas F1 Team,,,72.958
-2021,Monaco Grand Prix,43.66883116883117,,,Haas F1 Team,,,
 2024,British Grand Prix,69.39721792890263,True,russell,Mercedes,Mercedes,1.0,90.106
 2024,British Grand Prix,69.39721792890263,True,hamilton,Mercedes,Mercedes,1.0,89.547
 2024,British Grand Prix,69.39721792890263,False,norris,McLaren,Mercedes,0.0,91.596
@@ -475,8 +451,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,United States Grand Prix,56.69957686882934,False,ocon,Haas F1 Team,,,94.136
 2025,United States Grand Prix,56.69957686882934,False,stroll,Aston Martin,Mercedes,0.0,94.54
 2025,United States Grand Prix,56.69957686882934,False,albon,Williams,Mercedes,0.0,94.69
-2025,United States Grand Prix,56.69957686882934,False,hadjar,Racing Bulls,Honda,0.0,
-2025,United States Grand Prix,56.69957686882934,False,hadjar,Racing Bulls,Honda,0.0,
 2021,Spanish Grand Prix,62.14605067064084,False,hamilton,Mercedes,Mercedes,1.0,78.245
 2021,Spanish Grand Prix,62.14605067064084,False,max_verstappen,Red Bull Racing,,,78.09
 2021,Spanish Grand Prix,62.14605067064084,False,bottas,Mercedes,Mercedes,1.0,78.005
@@ -616,7 +590,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2018,Canadian Grand Prix,63.34586466165414,False,stroll,Williams,Mercedes,0.0,73.59
 2018,Canadian Grand Prix,63.34586466165414,False,sirotkin,Williams,Mercedes,0.0,73.643
 2018,Canadian Grand Prix,63.34586466165414,False,ericsson,Sauber,Ferrari,0.0,74.593
-2018,Canadian Grand Prix,63.34586466165414,,grosjean,Haas F1 Team,,,
 2021,French Grand Prix,59.796437659033074,False,max_verstappen,Red Bull Racing,,,91.001
 2021,French Grand Prix,59.796437659033074,False,hamilton,Mercedes,Mercedes,1.0,91.237
 2021,French Grand Prix,59.796437659033074,False,bottas,Mercedes,Mercedes,1.0,91.669
@@ -635,12 +608,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2021,French Grand Prix,59.796437659033074,False,latifi,Williams,Mercedes,0.0,93.062
 2021,French Grand Prix,59.796437659033074,False,raikkonen,Alfa Romeo Racing,,,93.354
 2021,French Grand Prix,59.796437659033074,False,mazepin,Haas F1 Team,,,93.554
-2021,French Grand Prix,59.796437659033074,False,stroll,Aston Martin,Mercedes,0.0,
-2021,French Grand Prix,59.796437659033074,False,stroll,Aston Martin,Mercedes,0.0,
-2021,French Grand Prix,59.796437659033074,False,stroll,Aston Martin,Mercedes,0.0,
-2021,French Grand Prix,59.796437659033074,False,stroll,Aston Martin,Mercedes,0.0,
-2021,French Grand Prix,59.796437659033074,False,tsunoda,AlphaTauri,,,
-2021,French Grand Prix,59.796437659033074,False,tsunoda,AlphaTauri,,,
 2022,Japanese Grand Prix,62.82245827010622,False,max_verstappen,Red Bull Racing,,,90.224
 2022,Japanese Grand Prix,62.82245827010622,False,leclerc,Ferrari,Ferrari,1.0,90.402
 2022,Japanese Grand Prix,62.82245827010622,False,sainz,Ferrari,Ferrari,1.0,90.336
@@ -760,8 +727,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2023,Abu Dhabi Grand Prix,65.18282988871225,False,kevin_magnussen,Haas F1 Team,,,84.764
 2023,Abu Dhabi Grand Prix,65.18282988871225,False,bottas,Alfa Romeo,Ferrari,0.0,84.788
 2023,Abu Dhabi Grand Prix,65.18282988871225,False,zhou,Alfa Romeo,Ferrari,0.0,85.159
-2023,Abu Dhabi Grand Prix,65.18282988871225,False,sargeant,Williams,Mercedes,0.0,
-2023,Abu Dhabi Grand Prix,65.18282988871225,False,sargeant,Williams,Mercedes,0.0,
 2024,Australian Grand Prix,73.42419080068143,False,max_verstappen,Red Bull Racing,,,76.819
 2024,Australian Grand Prix,73.42419080068143,False,sainz,Ferrari,Ferrari,1.0,76.731
 2024,Australian Grand Prix,73.42419080068143,False,perez,Red Bull Racing,,,76.805
@@ -980,7 +945,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2021,Hungarian Grand Prix,54.6969696969697,False,russell,Williams,Mercedes,0.0,77.944
 2021,Hungarian Grand Prix,54.6969696969697,False,latifi,Williams,Mercedes,0.0,78.036
 2021,Hungarian Grand Prix,54.6969696969697,False,mazepin,Haas F1 Team,,,78.922
-2021,Hungarian Grand Prix,54.6969696969697,,mick_schumacher,Haas F1 Team,,,
 2021,Saudi Arabian Grand Prix,66.8848167539267,False,hamilton,Mercedes,Mercedes,1.0,88.466
 2021,Saudi Arabian Grand Prix,66.8848167539267,False,bottas,Mercedes,Mercedes,1.0,88.057
 2021,Saudi Arabian Grand Prix,66.8848167539267,False,max_verstappen,Red Bull Racing,,,88.285
@@ -1036,11 +1000,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2024,Azerbaijan Grand Prix,59.24528301886792,False,hulkenberg,Haas F1 Team,,,103.101
 2024,Azerbaijan Grand Prix,59.24528301886792,False,stroll,Aston Martin,Mercedes,0.0,103.37
 2024,Azerbaijan Grand Prix,59.24528301886792,False,ricciardo,RB,,,103.547
-2024,Azerbaijan Grand Prix,59.24528301886792,False,gasly,Alpine,Renault,1.0,
-2024,Azerbaijan Grand Prix,59.24528301886792,False,gasly,Alpine,Renault,1.0,
-2024,Azerbaijan Grand Prix,59.24528301886792,False,gasly,Alpine,Renault,1.0,
-2024,Azerbaijan Grand Prix,59.24528301886792,False,gasly,Alpine,Renault,1.0,
-2024,Azerbaijan Grand Prix,59.24528301886792,False,gasly,Alpine,Renault,1.0,
 2024,Azerbaijan Grand Prix,59.24528301886792,False,norris,McLaren,Mercedes,0.0,103.609
 2024,Azerbaijan Grand Prix,59.24528301886792,False,bottas,Kick Sauber,,,103.618
 2024,Azerbaijan Grand Prix,59.24528301886792,False,zhou,Kick Sauber,,,104.246
@@ -1084,7 +1043,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,São Paulo Grand Prix,57.509157509157504,False,ocon,Haas F1 Team,,,70.438
 2025,São Paulo Grand Prix,57.509157509157504,False,colapinto,Alpine,Renault,1.0,70.632
 2025,São Paulo Grand Prix,57.509157509157504,False,tsunoda,Red Bull Racing,,,70.711
-2025,São Paulo Grand Prix,57.509157509157504,,,Kick Sauber,,,
 2020,Pre-Season Test 2,70.49180327868852,False,bottas,Mercedes,Mercedes,1.0,64.111
 2020,Pre-Season Test 2,70.49180327868852,False,hamilton,Mercedes,Mercedes,1.0,64.198
 2020,Pre-Season Test 2,70.49180327868852,False,max_verstappen,Red Bull Racing,,,64.024
@@ -1124,7 +1082,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,Dutch Grand Prix,56.81818181818182,False,hulkenberg,Kick Sauber,,,70.195
 2025,Dutch Grand Prix,56.81818181818182,False,ocon,Haas F1 Team,,,70.197
 2025,Dutch Grand Prix,56.81818181818182,False,bearman,Haas F1 Team,,,70.262
-2025,Dutch Grand Prix,56.81818181818182,False,stroll,Aston Martin,Mercedes,0.0,
 2018,United States Grand Prix,59.2274678111588,False,hamilton,Mercedes,Mercedes,1.0,94.13
 2018,United States Grand Prix,59.2274678111588,False,vettel,Ferrari,Ferrari,1.0,94.569
 2018,United States Grand Prix,59.2274678111588,False,raikkonen,Ferrari,Ferrari,1.0,94.703
@@ -1264,13 +1221,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2019,Singapore Grand Prix,45.73863636363637,False,grosjean,Haas F1 Team,,,100.277
 2019,Singapore Grand Prix,45.73863636363637,False,russell,Williams,Mercedes,0.0,100.867
 2019,Singapore Grand Prix,45.73863636363637,False,kubica,Williams,Mercedes,0.0,101.186
-2019,Singapore Grand Prix,45.73863636363637,False,ricciardo,Renault,Renault,1.0,
-2019,Singapore Grand Prix,45.73863636363637,False,ricciardo,Renault,Renault,1.0,
-2019,Singapore Grand Prix,45.73863636363637,False,ricciardo,Renault,Renault,1.0,
-2019,Singapore Grand Prix,45.73863636363637,False,ricciardo,Renault,Renault,1.0,
-2019,Singapore Grand Prix,45.73863636363637,False,ricciardo,Renault,Renault,1.0,
-2019,Singapore Grand Prix,45.73863636363637,False,ricciardo,Renault,Renault,1.0,
-2019,Singapore Grand Prix,45.73863636363637,False,ricciardo,Renault,Renault,1.0,
 2020,Spanish Grand Prix,62.2154779969651,False,hamilton,Mercedes,Mercedes,1.0,76.872
 2020,Spanish Grand Prix,62.2154779969651,False,bottas,Mercedes,Mercedes,1.0,77.243
 2020,Spanish Grand Prix,62.2154779969651,False,max_verstappen,Red Bull Racing,,,77.213
@@ -1329,9 +1279,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2018,British Grand Prix,67.49226006191951,False,sainz,Renault,Renault,1.0,88.456
 2018,British Grand Prix,67.49226006191951,False,vandoorne,McLaren,Renault,0.0,89.096
 2018,British Grand Prix,67.49226006191951,False,sirotkin,Williams,Mercedes,0.0,89.252
-2018,British Grand Prix,67.49226006191951,False,stroll,Williams,Mercedes,0.0,
-2018,British Grand Prix,67.49226006191951,False,stroll,Williams,Mercedes,0.0,
-2018,British Grand Prix,67.49226006191951,,brendon_hartley,Toro Rosso,Honda,1.0,
 2019,United States Grand Prix,60.02865329512894,False,bottas,Mercedes,Mercedes,1.0,93.75
 2019,United States Grand Prix,60.02865329512894,False,vettel,Ferrari,Ferrari,1.0,93.766
 2019,United States Grand Prix,60.02865329512894,False,max_verstappen,Red Bull Racing,,,93.549
@@ -1371,7 +1318,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,Australian Grand Prix,69.73451327433628,False,hulkenberg,Kick Sauber,,,76.579
 2025,Australian Grand Prix,69.73451327433628,False,lawson,Red Bull Racing,,,77.094
 2025,Australian Grand Prix,69.73451327433628,False,ocon,Haas F1 Team,,,77.147
-2025,Australian Grand Prix,69.73451327433628,False,bearman,Haas F1 Team,,,
 2025,Canadian Grand Prix,65.9963436928702,False,russell,Mercedes,Mercedes,1.0,72.075
 2025,Canadian Grand Prix,65.9963436928702,False,max_verstappen,Red Bull Racing,,,72.054
 2025,Canadian Grand Prix,65.9963436928702,False,piastri,McLaren,Mercedes,0.0,71.939
@@ -1389,7 +1335,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,Canadian Grand Prix,65.9963436928702,False,ocon,Haas F1 Team,,,72.378
 2025,Canadian Grand Prix,65.9963436928702,False,bortoleto,Kick Sauber,,,72.385
 2025,Canadian Grand Prix,65.9963436928702,False,sainz,Williams,Mercedes,0.0,72.398
-2025,Canadian Grand Prix,65.9963436928702,False,stroll,Aston Martin,Mercedes,0.0,72.517
 2025,Canadian Grand Prix,65.9963436928702,False,stroll,Aston Martin,Mercedes,0.0,72.517
 2025,Canadian Grand Prix,65.9963436928702,False,lawson,Racing Bulls,Honda,0.0,72.525
 2025,Canadian Grand Prix,65.9963436928702,False,gasly,Alpine,Renault,1.0,72.667
@@ -1512,7 +1457,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2018,Spanish Grand Prix,59.29824561403508,False,ericsson,Sauber,Ferrari,0.0,79.493
 2018,Spanish Grand Prix,59.29824561403508,False,sirotkin,Williams,Mercedes,0.0,79.695
 2018,Spanish Grand Prix,59.29824561403508,True,stroll,Williams,Mercedes,0.0,80.225
-2018,Spanish Grand Prix,59.29824561403508,,brendon_hartley,Toro Rosso,Honda,1.0,
 2022,Saudi Arabian Grand Prix,72.07207207207207,False,perez,Red Bull Racing,,,89.705
 2022,Saudi Arabian Grand Prix,72.07207207207207,False,leclerc,Ferrari,Ferrari,1.0,89.039
 2022,Saudi Arabian Grand Prix,72.07207207207207,False,sainz,Ferrari,Ferrari,1.0,88.855
@@ -1532,8 +1476,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2022,Saudi Arabian Grand Prix,72.07207207207207,False,albon,Williams,Mercedes,0.0,90.492
 2022,Saudi Arabian Grand Prix,72.07207207207207,False,hulkenberg,Aston Martin,Mercedes,0.0,90.543
 2022,Saudi Arabian Grand Prix,72.07207207207207,False,latifi,Williams,Mercedes,0.0,91.817
-2022,Saudi Arabian Grand Prix,72.07207207207207,False,tsunoda,AlphaTauri,Honda,0.0,
-2022,Saudi Arabian Grand Prix,72.07207207207207,False,tsunoda,AlphaTauri,Honda,0.0,
 2020,British Grand Prix,67.07482993197279,False,hamilton,Mercedes,Mercedes,1.0,85.9
 2020,British Grand Prix,67.07482993197279,False,bottas,Mercedes,Mercedes,1.0,85.801
 2020,British Grand Prix,67.07482993197279,False,max_verstappen,Red Bull Racing,,,86.115
@@ -1633,7 +1575,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2022,Miami Grand Prix,54.13533834586466,False,zhou,Alfa Romeo,,,91.02
 2022,Miami Grand Prix,54.13533834586466,False,albon,Williams,Mercedes,0.0,91.266
 2022,Miami Grand Prix,54.13533834586466,False,latifi,Williams,Mercedes,0.0,91.325
-2022,Miami Grand Prix,54.13533834586466,,ocon,Alpine,Renault,1.0,
 2022,Mexico City Grand Prix,46.30872483221477,False,max_verstappen,Red Bull Racing,,,79.222
 2022,Mexico City Grand Prix,46.30872483221477,False,russell,Mercedes,Mercedes,1.0,79.583
 2022,Mexico City Grand Prix,46.30872483221477,False,hamilton,Mercedes,Mercedes,1.0,79.169
@@ -1713,7 +1654,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2023,Australian Grand Prix,69.70198675496688,False,zhou,Alfa Romeo,Ferrari,0.0,78.54
 2023,Australian Grand Prix,69.70198675496688,False,sargeant,Williams,Mercedes,0.0,78.557
 2023,Australian Grand Prix,69.70198675496688,False,bottas,Alfa Romeo,Ferrari,0.0,78.714
-2023,Australian Grand Prix,69.70198675496688,False,perez,Red Bull Racing,,,
 2019,Azerbaijan Grand Prix,63.62433862433863,False,bottas,Mercedes,Mercedes,1.0,102.026
 2019,Azerbaijan Grand Prix,63.62433862433863,False,hamilton,Mercedes,Mercedes,1.0,101.614
 2019,Azerbaijan Grand Prix,63.62433862433863,False,vettel,Ferrari,Ferrari,1.0,102.042
@@ -1732,14 +1672,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2019,Azerbaijan Grand Prix,63.62433862433863,False,hulkenberg,Renault,Renault,1.0,103.427
 2019,Azerbaijan Grand Prix,63.62433862433863,False,russell,Williams,Mercedes,0.0,105.062
 2019,Azerbaijan Grand Prix,63.62433862433863,False,kubica,Williams,Mercedes,0.0,105.455
-2019,Azerbaijan Grand Prix,63.62433862433863,False,raikkonen,Alfa Romeo Racing,,,
-2019,Azerbaijan Grand Prix,63.62433862433863,False,raikkonen,Alfa Romeo Racing,,,
-2019,Azerbaijan Grand Prix,63.62433862433863,False,raikkonen,Alfa Romeo Racing,,,
-2019,Azerbaijan Grand Prix,63.62433862433863,False,raikkonen,Alfa Romeo Racing,,,
-2019,Azerbaijan Grand Prix,63.62433862433863,False,raikkonen,Alfa Romeo Racing,,,
-2019,Azerbaijan Grand Prix,63.62433862433863,False,raikkonen,Alfa Romeo Racing,,,
-2019,Azerbaijan Grand Prix,63.62433862433863,False,raikkonen,Alfa Romeo Racing,,,
-2019,Azerbaijan Grand Prix,63.62433862433863,False,gasly,Red Bull Racing,,,
 2022,Abu Dhabi Grand Prix,63.24921135646687,False,max_verstappen,Red Bull Racing,,,84.754
 2022,Abu Dhabi Grand Prix,63.24921135646687,False,perez,Red Bull Racing,,,84.82
 2022,Abu Dhabi Grand Prix,63.24921135646687,False,leclerc,Ferrari,Ferrari,1.0,85.211
@@ -1838,15 +1770,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,Pre-Season Testing,51.114413075780085,False,colapinto,Alpine,Renault,1.0,90.982
 2025,Pre-Season Testing,51.114413075780085,False,ocon,Haas F1 Team,,,90.989
 2025,Pre-Season Testing,51.114413075780085,False,gasly,Alpine,Renault,1.0,91.261
-2025,Pre-Season Testing,51.114413075780085,False,albon,Williams,Mercedes,0.0,
-2025,Pre-Season Testing,51.114413075780085,False,albon,Williams,Mercedes,0.0,
-2025,Pre-Season Testing,51.114413075780085,False,albon,Williams,Mercedes,0.0,
-2025,Pre-Season Testing,51.114413075780085,False,albon,Williams,Mercedes,0.0,
-2025,Pre-Season Testing,51.114413075780085,False,sainz,Williams,Mercedes,0.0,
-2025,Pre-Season Testing,51.114413075780085,False,sainz,Williams,Mercedes,0.0,
-2025,Pre-Season Testing,51.114413075780085,False,sainz,Williams,Mercedes,0.0,
-2025,Pre-Season Testing,51.114413075780085,False,sainz,Williams,Mercedes,0.0,
-2025,Pre-Season Testing,51.114413075780085,False,sainz,Williams,Mercedes,0.0,
 2018,Belgian Grand Prix,68.86304909560724,False,hamilton,Mercedes,Mercedes,1.0,102.977
 2018,Belgian Grand Prix,68.86304909560724,False,vettel,Ferrari,Ferrari,1.0,103.035
 2018,Belgian Grand Prix,68.86304909560724,False,ocon,Racing Point,,,104.003
@@ -2279,7 +2202,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,Belgian Grand Prix,66.75461741424802,False,bortoleto,Kick Sauber,,,101.908
 2025,Belgian Grand Prix,66.75461741424802,False,ocon,Haas F1 Team,,,101.884
 2025,Belgian Grand Prix,66.75461741424802,False,bearman,Haas F1 Team,,,101.617
-2025,Belgian Grand Prix,66.75461741424802,False,bearman,Haas F1 Team,,,101.617
 2025,Belgian Grand Prix,66.75461741424802,False,gasly,Alpine,Renault,1.0,101.8
 2025,Belgian Grand Prix,66.75461741424802,False,hulkenberg,Kick Sauber,,,101.844
 2025,Belgian Grand Prix,66.75461741424802,False,sainz,Williams,Mercedes,0.0,101.691
@@ -2307,7 +2229,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2018,Monaco Grand Prix,41.72932330827068,False,ericsson,Sauber,Ferrari,0.0,73.265
 2018,Monaco Grand Prix,41.72932330827068,False,stroll,Williams,Mercedes,0.0,73.323
 2018,Monaco Grand Prix,41.72932330827068,False,kevin_magnussen,Haas F1 Team,,,73.393
-2018,Monaco Grand Prix,41.72932330827068,,max_verstappen,Red Bull Racing,,,
 2023,Saudi Arabian Grand Prix,75.0,False,perez,Red Bull Racing,,,89.244
 2023,Saudi Arabian Grand Prix,75.0,False,leclerc,Ferrari,Ferrari,1.0,89.376
 2023,Saudi Arabian Grand Prix,75.0,False,alonso,Aston Martin,Mercedes,0.0,89.298
@@ -2347,7 +2268,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2024,Saudi Arabian Grand Prix,76.53958944281524,False,ocon,Alpine,Renault,1.0,89.475
 2024,Saudi Arabian Grand Prix,76.53958944281524,False,gasly,Alpine,Renault,1.0,89.479
 2024,Saudi Arabian Grand Prix,76.53958944281524,False,sargeant,Williams,Mercedes,0.0,89.526
-2024,Saudi Arabian Grand Prix,76.53958944281524,False,zhou,Kick Sauber,,,
 2019,Italian Grand Prix,71.83333333333334,False,leclerc,Ferrari,Ferrari,1.0,80.126
 2019,Italian Grand Prix,71.83333333333334,False,hamilton,Mercedes,Mercedes,1.0,80.272
 2019,Italian Grand Prix,71.83333333333334,False,bottas,Mercedes,Mercedes,1.0,80.156
@@ -2367,8 +2287,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2019,Italian Grand Prix,71.83333333333334,False,perez,Racing Point,Mercedes,0.0,81.291
 2019,Italian Grand Prix,71.83333333333334,False,russell,Williams,Mercedes,0.0,81.8
 2019,Italian Grand Prix,71.83333333333334,False,kubica,Williams,Mercedes,0.0,82.356
-2019,Italian Grand Prix,71.83333333333334,False,max_verstappen,Red Bull Racing,,,
-2019,Italian Grand Prix,71.83333333333334,False,max_verstappen,Red Bull Racing,,,
 2019,Chinese Grand Prix,58.68613138686132,False,bottas,Mercedes,Mercedes,1.0,92.658
 2019,Chinese Grand Prix,58.68613138686132,False,hamilton,Mercedes,Mercedes,1.0,93.115
 2019,Chinese Grand Prix,58.68613138686132,False,vettel,Ferrari,Ferrari,1.0,93.557
@@ -2387,8 +2305,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2019,Chinese Grand Prix,58.68613138686132,False,stroll,Racing Point,Mercedes,0.0,94.292
 2019,Chinese Grand Prix,58.68613138686132,False,russell,Williams,Mercedes,0.0,95.253
 2019,Chinese Grand Prix,58.68613138686132,False,kubica,Williams,Mercedes,0.0,95.281
-2019,Chinese Grand Prix,58.68613138686132,,,Toro Rosso,Honda,1.0,
-2019,Chinese Grand Prix,58.68613138686132,False,,Alfa Romeo Racing,,,
 2024,Singapore Grand Prix,52.49266862170088,False,norris,McLaren,Mercedes,0.0,90.002
 2024,Singapore Grand Prix,52.49266862170088,False,max_verstappen,Red Bull Racing,,,90.157
 2024,Singapore Grand Prix,52.49266862170088,False,hamilton,Mercedes,Mercedes,1.0,90.393
@@ -2459,12 +2375,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2024,Dutch Grand Prix,55.07518796992481,False,stroll,Aston Martin,Mercedes,0.0,71.518
 2024,Dutch Grand Prix,55.07518796992481,False,gasly,Alpine,Renault,1.0,71.718
 2024,Dutch Grand Prix,55.07518796992481,False,sainz,Ferrari,Ferrari,1.0,71.327
-2024,Dutch Grand Prix,55.07518796992481,False,albon,Williams,Mercedes,0.0,
-2024,Dutch Grand Prix,55.07518796992481,False,albon,Williams,Mercedes,0.0,
-2024,Dutch Grand Prix,55.07518796992481,False,albon,Williams,Mercedes,0.0,
-2024,Dutch Grand Prix,55.07518796992481,False,albon,Williams,Mercedes,0.0,
-2024,Dutch Grand Prix,55.07518796992481,False,albon,Williams,Mercedes,0.0,
-2024,Dutch Grand Prix,55.07518796992481,False,albon,Williams,Mercedes,0.0,
 2024,Dutch Grand Prix,55.07518796992481,False,hamilton,Mercedes,Mercedes,1.0,71.375
 2024,Dutch Grand Prix,55.07518796992481,False,tsunoda,RB,,,71.603
 2024,Dutch Grand Prix,55.07518796992481,False,hulkenberg,Haas F1 Team,,,71.832
@@ -2473,7 +2383,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2024,Dutch Grand Prix,55.07518796992481,False,ocon,Alpine,Renault,1.0,71.995
 2024,Dutch Grand Prix,55.07518796992481,False,bottas,Kick Sauber,,,72.168
 2024,Dutch Grand Prix,55.07518796992481,False,zhou,Kick Sauber,,,73.261
-2024,Dutch Grand Prix,55.07518796992481,,sargeant,Williams,Mercedes,0.0,
 2022,Pre-Season Track Session,50.53050397877984,False,sainz,Ferrari,Ferrari,1.0,100.19
 2022,Pre-Season Track Session,50.53050397877984,False,max_verstappen,Red Bull Racing,,,99.129
 2022,Pre-Season Track Session,50.53050397877984,False,leclerc,Ferrari,Ferrari,1.0,99.846
@@ -2553,7 +2462,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2020,Styrian Grand Prix,46.40718562874252,True,perez,Racing Point,Mercedes,0.0,81.607
 2020,Styrian Grand Prix,46.40718562874252,True,latifi,Williams,Mercedes,0.0,81.759
 2020,Styrian Grand Prix,46.40718562874252,True,giovinazzi,Alfa Romeo Racing,,,81.831
-2020,Styrian Grand Prix,46.40718562874252,True,grosjean,Haas F1 Team,,,
 2025,Emilia Romagna Grand Prix,65.94594594594595,False,piastri,McLaren,Mercedes,0.0,75.5
 2025,Emilia Romagna Grand Prix,65.94594594594595,False,max_verstappen,Red Bull Racing,,,75.175
 2025,Emilia Romagna Grand Prix,65.94594594594595,False,russell,Mercedes,Mercedes,1.0,75.852
@@ -2573,8 +2481,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,Emilia Romagna Grand Prix,65.94594594594595,False,hulkenberg,Kick Sauber,,,76.518
 2025,Emilia Romagna Grand Prix,65.94594594594595,False,ocon,Haas F1 Team,,,76.613
 2025,Emilia Romagna Grand Prix,65.94594594594595,False,bearman,Haas F1 Team,,,76.918
-2025,Emilia Romagna Grand Prix,65.94594594594595,False,tsunoda,Red Bull Racing,,,
-2025,Emilia Romagna Grand Prix,65.94594594594595,False,tsunoda,Red Bull Racing,,,
 2019,French Grand Prix,61.53846153846154,False,hamilton,Mercedes,Mercedes,1.0,90.609
 2019,French Grand Prix,61.53846153846154,False,bottas,Mercedes,Mercedes,1.0,90.55
 2019,French Grand Prix,61.53846153846154,False,leclerc,Ferrari,Ferrari,1.0,90.647
@@ -2614,9 +2520,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2024,Emilia Romagna Grand Prix,68.50533807829181,False,zhou,Kick Sauber,,,76.834
 2024,Emilia Romagna Grand Prix,68.50533807829181,False,kevin_magnussen,Haas F1 Team,,,76.854
 2024,Emilia Romagna Grand Prix,68.50533807829181,False,alonso,Aston Martin,Mercedes,0.0,76.917
-2024,Emilia Romagna Grand Prix,68.50533807829181,False,sargeant,Williams,Mercedes,0.0,
-2024,Emilia Romagna Grand Prix,68.50533807829181,False,sargeant,Williams,Mercedes,0.0,
-2024,Emilia Romagna Grand Prix,68.50533807829181,False,sargeant,Williams,Mercedes,0.0,
 2023,Mexico City Grand Prix,48.48993288590604,False,leclerc,Ferrari,Ferrari,1.0,78.401
 2023,Mexico City Grand Prix,48.48993288590604,False,sainz,Ferrari,Ferrari,1.0,78.755
 2023,Mexico City Grand Prix,48.48993288590604,False,max_verstappen,Red Bull Racing,,,78.099
@@ -2636,8 +2539,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2023,Mexico City Grand Prix,48.48993288590604,False,kevin_magnussen,Haas F1 Team,,,79.163
 2023,Mexico City Grand Prix,48.48993288590604,False,stroll,Aston Martin,Mercedes,0.0,79.227
 2023,Mexico City Grand Prix,48.48993288590604,False,norris,McLaren,Mercedes,0.0,81.554
-2023,Mexico City Grand Prix,48.48993288590604,False,sargeant,Williams,Mercedes,0.0,
-2023,Mexico City Grand Prix,48.48993288590604,False,sargeant,Williams,Mercedes,0.0,
 2022,Australian Grand Prix,70.8904109589041,False,leclerc,Ferrari,Ferrari,1.0,78.881
 2022,Australian Grand Prix,70.8904109589041,False,max_verstappen,Red Bull Racing,,,78.58
 2022,Australian Grand Prix,70.8904109589041,False,perez,Red Bull Racing,,,78.834
@@ -2657,7 +2558,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2022,Australian Grand Prix,70.8904109589041,False,kevin_magnussen,Haas F1 Team,,,80.254
 2022,Australian Grand Prix,70.8904109589041,False,vettel,Aston Martin,Mercedes,0.0,81.149
 2022,Australian Grand Prix,70.8904109589041,False,latifi,Williams,Mercedes,0.0,81.372
-2022,Australian Grand Prix,70.8904109589041,False,stroll,Aston Martin,Mercedes,0.0,
 2018,Azerbaijan Grand Prix,60.7764390896921,False,vettel,Ferrari,Ferrari,1.0,102.762
 2018,Azerbaijan Grand Prix,60.7764390896921,False,hamilton,Mercedes,Mercedes,1.0,102.693
 2018,Azerbaijan Grand Prix,60.7764390896921,False,bottas,Mercedes,Mercedes,1.0,103.355
@@ -2677,8 +2577,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2018,Azerbaijan Grand Prix,60.7764390896921,True,gasly,Toro Rosso,Honda,1.0,104.496
 2018,Azerbaijan Grand Prix,60.7764390896921,False,ericsson,Sauber,Ferrari,0.0,105.541
 2018,Azerbaijan Grand Prix,60.7764390896921,True,brendon_hartley,Toro Rosso,Honda,1.0,117.354
-2018,Azerbaijan Grand Prix,60.7764390896921,False,grosjean,Haas F1 Team,,,
-2018,Azerbaijan Grand Prix,60.7764390896921,False,grosjean,Haas F1 Team,,,
 2021,British Grand Prix,68.1757656458056,False,hamilton,Mercedes,Mercedes,1.0,86.786
 2021,British Grand Prix,68.1757656458056,False,max_verstappen,Red Bull Racing,,,86.751
 2021,British Grand Prix,68.1757656458056,False,bottas,Mercedes,Mercedes,1.0,87.487
@@ -2894,7 +2792,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2020,Emilia Romagna Grand Prix,71.31661442006269,False,russell,Williams,Mercedes,0.0,75.76
 2020,Emilia Romagna Grand Prix,71.31661442006269,False,vettel,Ferrari,Ferrari,1.0,75.571
 2020,Emilia Romagna Grand Prix,71.31661442006269,False,stroll,Racing Point,Mercedes,0.0,75.822
-2020,Emilia Romagna Grand Prix,71.31661442006269,False,stroll,Racing Point,Mercedes,0.0,75.822
 2020,Emilia Romagna Grand Prix,71.31661442006269,False,grosjean,Haas F1 Team,,,75.918
 2020,Emilia Romagna Grand Prix,71.31661442006269,False,kevin_magnussen,Haas F1 Team,,,75.939
 2020,Emilia Romagna Grand Prix,71.31661442006269,False,raikkonen,Alfa Romeo Racing,,,75.953
@@ -2939,8 +2836,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2021,Emilia Romagna Grand Prix,71.1864406779661,False,giovinazzi,Alfa Romeo Racing,,,76.122
 2021,Emilia Romagna Grand Prix,71.1864406779661,False,mick_schumacher,Haas F1 Team,,,76.279
 2021,Emilia Romagna Grand Prix,71.1864406779661,False,mazepin,Haas F1 Team,,,76.797
-2021,Emilia Romagna Grand Prix,71.1864406779661,False,tsunoda,AlphaTauri,,,
-2021,Emilia Romagna Grand Prix,71.1864406779661,False,tsunoda,AlphaTauri,,,
 2022,Dutch Grand Prix,59.14396887159533,False,max_verstappen,Red Bull Racing,,,71.317
 2022,Dutch Grand Prix,59.14396887159533,False,leclerc,Ferrari,Ferrari,1.0,71.443
 2022,Dutch Grand Prix,59.14396887159533,False,sainz,Ferrari,Ferrari,1.0,71.767
@@ -2980,8 +2875,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2022,Emilia Romagna Grand Prix,65.23178807947019,False,gasly,AlphaTauri,Honda,0.0,80.732
 2022,Emilia Romagna Grand Prix,65.23178807947019,False,latifi,Williams,Mercedes,0.0,81.971
 2022,Emilia Romagna Grand Prix,65.23178807947019,False,ocon,Alpine,Renault,1.0,82.338
-2022,Emilia Romagna Grand Prix,65.23178807947019,False,albon,Williams,Mercedes,0.0,
-2022,Emilia Romagna Grand Prix,65.23178807947019,False,albon,Williams,Mercedes,0.0,
 2024,Pre-Season Testing,52.49266862170088,False,norris,McLaren,Mercedes,0.0,90.002
 2024,Pre-Season Testing,52.49266862170088,False,max_verstappen,Red Bull Racing,,,90.157
 2024,Pre-Season Testing,52.49266862170088,False,hamilton,Mercedes,Mercedes,1.0,90.393
@@ -3100,12 +2993,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2021,Azerbaijan Grand Prix,61.31221719457014,False,latifi,Williams,Mercedes,0.0,103.128
 2021,Azerbaijan Grand Prix,61.31221719457014,False,mick_schumacher,Haas F1 Team,,,104.158
 2021,Azerbaijan Grand Prix,61.31221719457014,False,mazepin,Haas F1 Team,,,104.238
-2021,Azerbaijan Grand Prix,61.31221719457014,False,stroll,Aston Martin,Mercedes,0.0,
-2021,Azerbaijan Grand Prix,61.31221719457014,False,stroll,Aston Martin,Mercedes,0.0,
-2021,Azerbaijan Grand Prix,61.31221719457014,False,giovinazzi,Alfa Romeo Racing,,,
-2021,Azerbaijan Grand Prix,61.31221719457014,False,giovinazzi,Alfa Romeo Racing,,,
-2021,Azerbaijan Grand Prix,61.31221719457014,False,giovinazzi,Alfa Romeo Racing,,,
-2021,Azerbaijan Grand Prix,61.31221719457014,False,giovinazzi,Alfa Romeo Racing,,,
 2019,Belgian Grand Prix,63.82428940568475,False,leclerc,Ferrari,Ferrari,1.0,103.587
 2019,Belgian Grand Prix,63.82428940568475,False,vettel,Ferrari,Ferrari,1.0,104.109
 2019,Belgian Grand Prix,63.82428940568475,False,hamilton,Mercedes,Mercedes,1.0,105.26
@@ -3125,8 +3012,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2019,Belgian Grand Prix,63.82428940568475,False,sainz,McLaren,Renault,0.0,106.507
 2019,Belgian Grand Prix,63.82428940568475,False,kvyat,Toro Rosso,Honda,1.0,106.518
 2019,Belgian Grand Prix,63.82428940568475,False,russell,Williams,Mercedes,0.0,107.548
-2019,Belgian Grand Prix,63.82428940568475,False,kubica,Williams,Mercedes,0.0,
-2019,Belgian Grand Prix,63.82428940568475,False,kubica,Williams,Mercedes,0.0,
 2024,Hungarian Grand Prix,55.67190226876091,True,norris,McLaren,Mercedes,0.0,77.755
 2024,Hungarian Grand Prix,55.67190226876091,True,piastri,McLaren,Mercedes,0.0,77.504
 2024,Hungarian Grand Prix,55.67190226876091,True,max_verstappen,Red Bull Racing,,,77.087
@@ -3213,7 +3098,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2019,Australian Grand Prix,69.6969696969697,False,max_verstappen,Red Bull Racing,,,82.876
 2019,Australian Grand Prix,69.6969696969697,False,leclerc,Ferrari,Ferrari,1.0,82.017
 2019,Australian Grand Prix,69.6969696969697,False,grosjean,Haas F1 Team,,,82.959
-2019,Australian Grand Prix,69.6969696969697,False,kevin_magnussen,Haas F1 Team,,,82.519
 2019,Australian Grand Prix,69.6969696969697,False,kevin_magnussen,Haas F1 Team,,,82.519
 2019,Australian Grand Prix,69.6969696969697,False,norris,McLaren,Renault,0.0,82.702
 2019,Australian Grand Prix,69.6969696969697,False,raikkonen,Alfa Romeo Racing,,,82.966
@@ -3447,7 +3331,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2021,Russian Grand Prix,56.40449438202248,True,mick_schumacher,Haas F1 Team,,,109.83
 2021,Russian Grand Prix,56.40449438202248,True,giovinazzi,Alfa Romeo Racing,,,111.023
 2021,Russian Grand Prix,56.40449438202248,True,mazepin,Haas F1 Team,,,113.764
-2021,Russian Grand Prix,56.40449438202248,False,max_verstappen,Red Bull Racing,,,
 2018,Singapore Grand Prix,43.43015214384509,False,hamilton,Mercedes,Mercedes,1.0,99.403
 2018,Singapore Grand Prix,43.43015214384509,False,max_verstappen,Red Bull Racing,,,98.751
 2018,Singapore Grand Prix,43.43015214384509,False,vettel,Ferrari,Ferrari,1.0,98.218
@@ -3487,8 +3370,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2023,Japanese Grand Prix,64.86090775988286,False,stroll,Aston Martin,Mercedes,0.0,91.181
 2023,Japanese Grand Prix,64.86090775988286,False,hulkenberg,Haas F1 Team,,,91.299
 2023,Japanese Grand Prix,64.86090775988286,False,zhou,Alfa Romeo,Ferrari,0.0,91.398
-2023,Japanese Grand Prix,64.86090775988286,False,sargeant,Williams,Mercedes,0.0,
-2023,Japanese Grand Prix,64.86090775988286,False,sargeant,Williams,Mercedes,0.0,
 2019,Canadian Grand Prix,61.74242424242424,False,vettel,Ferrari,Ferrari,1.0,71.2
 2019,Canadian Grand Prix,61.74242424242424,False,hamilton,Mercedes,Mercedes,1.0,71.518
 2019,Canadian Grand Prix,61.74242424242424,False,leclerc,Ferrari,Ferrari,1.0,71.214
@@ -3583,7 +3464,6 @@ Year,EventName,FullThrottlePct,Rainfall,DriverId,TeamName,engine,works,Q1_time
 2025,Qatar Grand Prix,68.4729064039409,False,lawson,Racing Bulls,Honda,0.0,80.539
 2025,Qatar Grand Prix,68.4729064039409,False,bearman,Haas F1 Team,,,80.548
 2025,Qatar Grand Prix,68.4729064039409,False,bortoleto,Kick Sauber,,,80.653
-2025,Qatar Grand Prix,68.4729064039409,False,albon,Williams,Mercedes,0.0,80.629
 2025,Qatar Grand Prix,68.4729064039409,False,albon,Williams,Mercedes,0.0,80.629
 2025,Qatar Grand Prix,68.4729064039409,False,tsunoda,Red Bull Racing,,,80.761
 2025,Qatar Grand Prix,68.4729064039409,False,ocon,Haas F1 Team,,,80.864
