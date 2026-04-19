@@ -10,6 +10,10 @@ library(tidyverse)
 library(lubridate)
 library(ggplot2)
 library(car)
+library(lme4)
+library(glmnet)
+library(emmeans)
+
 
 ####
 # Get Data In
@@ -26,14 +30,33 @@ f1_all <- read.csv("f1_teams_joined.csv")
 f1_fast <- f1_all %>% filter(Year > 2017) 
 summary(f1_fast) #note full throttle has no NAs
 
+#### make Year as a Block
+f1_fast$YearBlock <- as.factor(f1_fast$Year)
+
+#### make fullthrottlePct centered
+f1_fast$Throttle_Centered <- f1_fast$FullThrottlePct - mean(f1_fast$FullThrottlePct)
+
 # correlation between track length and full throttle pct
 # note, should do comparison between dry only and all data
 f1_fast_dry <- f1_fast %>% filter(SessionCondition == "dry") # make dry data
-cor_value <- cor(f1_fast_dry$FullThrottlePct, f1_fast_dry$Track.Length..km., use = "complete.obs")
+#
+f1_fast_dry_107 <- f1_fast %>% filter(is_beyond_107 == 0 & SessionCondition == "dry") # dry w/o outliers
+
+f1_fast_wet_107 <- f1_fast %>% filter(is_beyond_107 == 0 & SessionCondition == "wet") # wet w/o outliers
+
+f1_fast_mixed_107 <- f1_fast %>% filter(is_beyond_107 == 0 & SessionCondition == "mixed") # mixed w/o outliers
+
+f1_fast_107 <- f1_fast %>% filter(is_beyond_107 == 0) # all w/out outliers
+
+f1_slow <- f1_fast %>% filter(is_beyond_107 == 1) # outliers only
+
+
+### testing Full Throttle % vs Track Length
+cor_value <- cor(f1_fast_dry_107$FullThrottlePct, f1_fast_dry_107$Track.Length..km., use = "complete.obs")
 print(cor_value)
 
 # plot it
-ggplot(f1_fast_dry, aes(x = FullThrottlePct, y = Track.Length..km.)) +
+ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = Track.Length..km.)) +
   geom_point() +
   geom_smooth(method = "lm",
               color = "blue",
@@ -41,22 +64,70 @@ ggplot(f1_fast_dry, aes(x = FullThrottlePct, y = Track.Length..km.)) +
   theme_minimal() +
   labs(title = paste("Correlation:", round(cor_value, 2)))
 
+# Full Throttle vs Per to Fastest
+cor_value <- cor(f1_fast_dry_107$FullThrottlePct, f1_fast_dry_107$PerToFastest, use = "complete.obs")
+print(cor_value)
+
+# plot it
+ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              color = "blue",
+              se = TRUE) +
+  theme_minimal() +
+  labs(title = paste("Correlation:", round(cor_value, 2)))
+
+# split based on works
+ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              color = "blue",
+              se = TRUE) +
+  facet_wrap(~ works) +
+  theme_minimal() +
+  labs(title = paste("Correlation:", round(cor_value, 2)))
+
+ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
+  geom_bin2d() + 
+  facet_wrap(~ works) +
+  scale_fill_gradient(low = "blue", high = "red") +
+  theme_minimal()
+
+# this is probably the grap we want
+ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              color = "blue",
+              se = TRUE) +
+  facet_grid(engine ~ works) +
+  theme_minimal()
+
+ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = GapToFastest)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              color = "blue",
+              se = TRUE) +
+  facet_grid(YearBlock ~ works) +
+  theme_minimal()
+
+
+########
 # starting models (no interaction)
-model_v1 <- lm(GapToFastest ~ works + engine + Year, data = f1_all)
+model_v1 <- lm(GapToFastest ~ works + engine + Year, data = f1_fast_107)
 summary(model_v1)
 vif(model_v1)
 
 model_v1p <- lm(PerToFastest ~ works + engine + Year, data = f1_all)
 summary(model_v1p)
 
-model_v2 <- lm(GapToFastest ~ works + engine + Year + Track.Length..km., data = f1_all)
+model_v2 <- lm(PerToFastest ~ works + engine + Year + Track.Length..km., data = f1_all)
 summary(model_v2)
 vif(model_v2)
 
 model_v3 <- lm(GapToFastest ~ works + Year + Track.Length..km., data = f1_all)
 summary(model_v3)
 
-model_v4 <- lm(GapToFastest ~ works + engine + Year + FullThrottlePct, data = f1_fast)
+model_v4 <- lm(PerToFastest ~ works + engine + Year + FullThrottlePct, data = f1_fast)
 summary(model_v4)
 
 model_v5 <- lm(GapToFastest ~ works + Year + engine + FullThrottlePct + SessionCondition, data = f1_fast)
@@ -76,40 +147,180 @@ summary(model_v8)
 model_v9 <- lm(GapToFastest ~ works * engine * Year * FullThrottlePct, data = f1_fast)
 summary(model_v9)
 
+model_v9p <- lm(PerToFastest ~ works * engine * Year * FullThrottlePct, data = f1_fast)
+summary(model_v9p)
+
+model_v9p_b <- lm(PerToFastest ~ SessionCondition + Year + works * engine * FullThrottlePct, data = f1_fast)
+summary(model_v9p_b)
+
 model_v10 <- lm(GapToFastest ~ works * Year * engine * FullThrottlePct * SessionCondition, data = f1_fast)
 summary(model_v10)
 
 model_v10p <- lm(PerToFastest ~ works * Year * engine * FullThrottlePct * SessionCondition, data = f1_fast)
 summary(model_v10p)
 
-### need to filter by dry sessions + not outliers + 2018+
-### stupid way of doing this
-
-f1_fast_dry_107 <- f1_fast %>% filter(is_beyond_107 == 0 & SessionCondition == "dry")
-
-model_v10 <- lm(GapToFastest ~ works * Year * engine * FullThrottlePct, data = f1_fast_dry_107)
+model_v10b <- lm(PerToFastest ~ YearBlock * works * engine * FullThrottlePct, data = f1_fast_dry_107)
 summary(model_v10)
 
-model_v10p <- lm(PerToFastest ~ works * Year * engine * FullThrottlePct, data = f1_fast_dry_107)
+model_v10p <- lm(PerToFastest ~ YearBlock * works * engine + FullThrottlePct, data = f1_fast_dry_107)
 summary(model_v10p)
 
-model_v11p <- lm(PerToFastest ~ Year + works * engine, data = f1_fast_dry_107)
+model_v11p <- lm(PerToFastest ~ Year * works * engine, data = f1_fast_dry_107)
 summary(model_v11p)
 
-model_v12p <- lm(PerToFastest ~ Year * works * engine, data = f1_fast_dry_107)
-summary(model_v12p)
+#### better models
+
+model_a <- lm(PerToFastest ~ YearBlock * works * engine, data = f1_fast_dry_107) ### this one!
+summary(model_a)
+
+model_b <- lm(PerToFastest ~ YearBlock * works * engine + SessionCondition, data = f1_fast_107)
+summary(model_b)
+
+model_b_lmer <- lmer(PerToFastest ~ YearBlock * works * engine + (1 | SessionCondition), data = f1_fast_107)
+summary(model_b_lmer)
+
+library(performance)
+model_performance(model_b_lmer)
+
+model_b_noWeather <- lm(PerToFastest ~ YearBlock * works * engine, data = f1_fast_107)
+summary(model_b_noWeather)
+
+model_b_log <- lm(log(PerToFastest+0.001) ~ YearBlock * works * engine + SessionCondition, data = f1_fast_107)
+summary(model_b_log)
+
+# formula: response ~ factor
+model_b_log_anova <- aov(log(PerToFastest+0.001) ~ YearBlock * works * engine + SessionCondition, data = f1_fast_107)
+summary(model_b_log_anova)  # Displays the ANOVA table
+# check multicolineatiate
+
+model_c <- lm(PerToFastest ~ YearBlock * works * engine * SessionCondition, data = f1_fast_107)
+summary(model_c)
+
+model_d <- lm(PerToFastest ~ YearBlock * works * engine + SessionCondition + Throttle_Centered, data = f1_fast_107)
+summary(model_d)
+
+summary(aov(model_b))
+summary(aov(model_d))
+
+###
+res_a <- resid(model_a)
+res_b <- resid(model_b)
+res_b_log <- resid(model_b_log)
+res_c <- resid(model_c)
+
+###
+boxplot(res_a ~ YearBlock, data = f1_fast_dry_107)
+boxplot(res_a ~ works, data = f1_fast_dry_107)
+boxplot(res_a ~ engine, data = f1_fast_dry_107)
+#
+boxplot(res_b ~ YearBlock, data = f1_fast_107)
+boxplot(res_b ~ works, data = f1_fast_107)
+boxplot(res_b ~ engine, data = f1_fast_107)
+#
+boxplot(res_c ~ YearBlock, data = f1_fast_107)
+boxplot(res_c ~ works, data = f1_fast_107)
+boxplot(res_c ~ engine, data = f1_fast_107)
+###
+
+plot(model_a, which = 1)
+plot(model_b, which = 1)
+plot(model_b_log, which = 1)
+plot(model_c, which = 1)
+
+###
+
+plot(model_a, which = 2)
+plot(model_b, which = 2)
+plot(model_b_log, which = 2)
+plot(model_c, which = 2)
 
 # check vif > 5 for models
 
 # check stepwise
-reduced_model_v10 <- step(model_v10, direction = "both")
-summary(reduced_model_v10)
+reduced_model_v10p <- step(model_v10p, direction = "both")
+summary(reduced_model_v10p)
 
 reduced_model_v12p <- step(model_v12p, direction = "both")
 summary(reduced_model_v12p)
 
+reduced_model_b_log <- step(model_b_log, direction = "both")
+summary(reduced_model_b_log)
+
+
+######
+f1_2018 <- f1_fast_dry_107 %>% filter(Year == 2018)
+f1_2019 <- f1_fast_dry_107 %>% filter(Year == 2019)
+f1_2020 <- f1_fast_dry_107 %>% filter(Year == 2020)
+f1_2021 <- f1_fast_dry_107 %>% filter(Year == 2021)
+f1_2022 <- f1_fast_dry_107 %>% filter(Year == 2022)
+f1_2023 <- f1_fast_dry_107 %>% filter(Year == 2023)
+f1_2024 <- f1_fast_dry_107 %>% filter(Year == 2024)
+f1_2025 <- f1_fast_dry_107 %>% filter(Year == 2025)
+
+boxplot(f1_2018$PerToFastest)
+boxplot(f1_2019$PerToFastest)
+boxplot(f1_2020$PerToFastest)
+boxplot(f1_2021$PerToFastest)
+boxplot(f1_2022$PerToFastest)
+boxplot(f1_2023$PerToFastest)
+boxplot(f1_2024$PerToFastest)
+boxplot(f1_2025$PerToFastest)
+
+boxplot(f1_fast_dry_107$PerToFastest)
+
 # OUTLIERS (107% rule or 3xIQR)
 
-# check contrasts
+
 
 # check normality (?)
+
+
+model_mixed <- lmer(PerToFastest ~ works * engine + (1 | SessionCondition), data = f1_fast)
+summary(model_mixed)
+
+
+### LASSO
+# create model matrix (handles factors automatically)
+x <- model.matrix(PerToFastest ~ Year + works + engine, data = f1_fast_dry_107)[,-1]
+y_vec <- f1_fast_dry_107$PerToFastest
+
+# fit lasso
+fit <- cv.glmnet(x, y_vec, alpha = 1)
+
+# coefficients
+coef(fit, s = "lambda.min")
+
+# check contrasts
+# Calculate the means for every combination
+m_grid <- emmeans(model_b, ~ works | YearBlock * engine + SessionCondition)
+
+# Contrast Works vs Customer for 2018 Ferrari Dry
+contrast(m_grid, "pairwise", at = list(YearBlock="2018", engine="Ferrari", SessionCondition="dry"), adjust = "bonferroni")
+
+### t-test of session conditions vs % throttle
+t.test(f1_fast_dry_107$FullThrottlePct, f1_fast_wet_107$FullThrottlePct)
+# p-value < 0.0001 for dry v wet
+t.test(f1_fast_dry_107$FullThrottlePct, f1_fast_mixed_107$FullThrottlePct)
+# p-value < 0.0002 for dry v mixed
+t.test(f1_fast_wet_107$FullThrottlePct, f1_fast_mixed_107$FullThrottlePct)
+# p-value < 0.004 for wet v mixed
+
+### t-test of session conditions vs % PerToFastest
+t.test(f1_fast_dry_107$FullThrottlePct, f1_fast_wet_107$PerToFastest)
+# p-value < 0.0001 for dry v wet
+t.test(f1_fast_dry_107$FullThrottlePct, f1_fast_mixed_107$PerToFastest)
+# p-value < 0.0001 for dry v mixed
+t.test(f1_fast_wet_107$FullThrottlePct, f1_fast_mixed_107$PerToFastest)
+# p-value < 0.0001 for wet v mixed
+
+ggplot(f1_fast_107, aes(x = SessionCondition, y = FullThrottlePct)) +
+  geom_violin(trim = FALSE, fill = "lightblue") +
+  geom_boxplot(width = 0.3) +
+  geom_jitter(width = 0.01, alpha = 0.5) +
+  theme_minimal()
+
+ggplot(f1_fast_107, aes(x = SessionCondition, y = PerToFastest)) +
+  geom_violin(trim = FALSE, fill = "lightblue") +
+  geom_boxplot(width = 0.3) +
+  geom_jitter(width = 0.01, alpha = 0.5) +
+  theme_minimal()
