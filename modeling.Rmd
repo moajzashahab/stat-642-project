@@ -1,5 +1,118 @@
 ---
-title: "modeling"
+title: "Modeling"
 output: html_document
 ---
 
+## setup
+
+```{r libraries}
+library(car)
+library(lme4)
+library(glmnet)
+library(ggplot2)
+library(emmeans)
+library(tidyverse)
+library(lubridate)
+```
+
+```{r read in data}
+df <- read.csv("data/modeling_processed.csv") 
+```
+
+### data preparation
+
+```{r}
+# convert categorical columns to factors
+df_fast$works <- as.factor(df_fast$works)
+df_fast$engine <- as.factor(df_fast$engine)
+df_fast$Year <- as.factor(df_fast$Year)
+
+# standardize performance within each race and flag extreme outliers
+df <- df %>%
+  group_by(Year, EventName) %>%   # group by race session (each qualifying event)
+  mutate(FastestQ1 = min(Q1_time, na.rm = TRUE),              # fastest lap time in that session
+         GapToFastest = Q1_time - FastestQ1,                  # absolute time gap to fastest driver
+         PerToFastest = GapToFastest / FastestQ1,             # relative gap (percentage difference)
+         is_beyond_107 = ifelse(PerToFastest > 0.07, 1, 0)    # flag laps slower than 107% rule
+         ) %>% ungroup()  
+
+# split data out by outliers
+df_fast <- df %>% filter(is_beyond_107 == 0)         # within 107%      
+df_slow <- df %>% filter(is_beyond_107 == 1)         # beyond 107% 
+
+# center throttle variable
+df$Throttle_Centered <- df$FullThrottlePct - mean(df$FullThrottlePct)
+```
+
+## modeling
+
+### model 1 (baseline): effect of team status, engine, and year on relative performance gap (excluding very slow drivers)
+
+```{r modeling}
+# fit multiple regression model
+model_v1 <- lm(PerToFastest ~ works + engine + Year, data = df_fast)
+# print regression summary
+summary(model_v1)
+# anova table
+car::Anova(model_v1, type=2) 
+```
+
+- model explains ~20.5% of the variation in relative performance gap (Adj. R² = 0.205) and model is statistically significant (F-test p < 0.001)
+- main effects: works teams have a significantly smaller gap (~0.59 percentage points lower, p < 0.001) and gap decreases over time (~0.095 percentage points per year, p < 0.001)
+- engine differences: mercedes associated with a smaller gap (p < 0.01), renault engines associated with a larger gap (p < 0.01), honda effect not statistically significant at 5% level
+- anova: works, engine, and year all have statistically significant effects
+
+```{r check assumptions}
+par(mfrow = c(2,2))
+plot(model_v1)          # get plots
+car::ncvTest(model_v1)  # heteroskedasticity
+car::vif(model_v1)      # multicollinearity
+```
+- residuals aren’t perfectly normal (some skew in the upper tail) and there’s evidence of non-constant variance. no issues with multicollinearity or influential points (already removed slow drivers.)
+
+### model 2: effect of team status, engine, and year on gap, controlling for throttle
+
+```{r}
+# fit model (add throttle as a covariate)
+model_v2 <- lm(PerToFastest ~ works + engine + Year + FullThrottlePct, data = df_fast)
+# regression summary
+summary(model_v2)
+# ANCOVA table
+car::Anova(model_v2, type = 2)
+```
+
+- Adj. R² = 0.208 (not much change)
+- FullThrottlePct is statistically significant (p < 0.001), with higher throttle usage associated with a slightly smaller performance gap
+
+### model 3 (interaction): year × work × engine effects on gap
+
+```{r}
+# fit model
+model_v3 <- lm(PerToFastest ~ Year * works * engine, data = df_fast)
+# model summary
+summary(model_v3)
+# ANOVA table
+car::Anova(model_v3, type = 2)
+```
+
+- Adj. R² = 0.313 (improvement over previous models) and is statistically significant.
+- interactions: significant two-way interactions (Year×works, Year×engine, works×engine) and a significant three-way interaction (Year×works×engine), evidence effect of team status and engine on performance gap changes year over year
+
+```{r pairwise contrasts}
+# pairwise engine comparisons within each year x work combination
+emmeans(model_v3, pairwise ~ engine | Year * works)
+# pairwise works comparisons within each year x engine combination
+emmeans(model_v3, pairwise ~ works | Year * engine)
+```
+
+- estimated marginal means show in 2022, works teams had a lower relative performance gap than customer teams across most engines
+- for customer teams, ferrari and mercedes have higher gaps, while renault has the lowest gap
+- for works teams, gaps are generally smaller but vary more by engine
+
+### model comparison
+
+```{r}
+AIC(model_v1, model_v2, model_v3)
+```
+
+- model 2 is slightly better than model 1 but model 3 is better than both
