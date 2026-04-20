@@ -14,7 +14,6 @@ library(lme4)
 library(glmnet)
 library(emmeans)
 
-
 ####
 # Get Data In
 ####
@@ -33,7 +32,7 @@ summary(f1_fast) #note full throttle has no NAs
 #### make Year as a Block
 f1_fast$YearBlock <- as.factor(f1_fast$Year)
 
-#### make fullthrottlePct centered
+#### make fullthrottlePct centered #new 4/2026
 f1_fast$Throttle_Centered <- f1_fast$FullThrottlePct - mean(f1_fast$FullThrottlePct)
 
 # correlation between track length and full throttle pct
@@ -113,7 +112,7 @@ ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = GapToFastest)) +
 
 ########
 # starting models (no interaction)
-model_v1 <- lm(GapToFastest ~ works + engine + Year, data = f1_fast_107)
+model_v1 <- lm(GapToFastest ~ works + engine + YearBlock, data = f1_fast_107)
 summary(model_v1)
 vif(model_v1)
 
@@ -173,31 +172,21 @@ summary(model_v11p)
 model_a <- lm(PerToFastest ~ YearBlock * works * engine, data = f1_fast_dry_107) ### this one!
 summary(model_a)
 
-model_b <- lm(PerToFastest ~ YearBlock * works * engine + SessionCondition, data = f1_fast_107)
+#new 4/20/26
+model_b <- lm(PerToFastest ~ YearBlock * works * engine * SessionCondition, data = f1_fast_107)
 summary(model_b)
+anova(model_b)
 
-model_b_lmer <- lmer(PerToFastest ~ YearBlock * works * engine + (1 | SessionCondition), data = f1_fast_107)
-summary(model_b_lmer)
-
-library(performance)
-model_performance(model_b_lmer)
-
-model_b_noWeather <- lm(PerToFastest ~ YearBlock * works * engine, data = f1_fast_107)
-summary(model_b_noWeather)
-
-model_b_log <- lm(log(PerToFastest+0.001) ~ YearBlock * works * engine + SessionCondition, data = f1_fast_107)
+model_b_log <- lm(log(PerToFastest+0.001) ~ YearBlock * works * engine * SessionCondition, data = f1_fast_107)
 summary(model_b_log)
+anova(model_b_log)
 
-# formula: response ~ factor
-model_b_log_anova <- aov(log(PerToFastest+0.001) ~ YearBlock * works * engine + SessionCondition, data = f1_fast_107)
-summary(model_b_log_anova)  # Displays the ANOVA table
-# check multicolineatiate
-
-model_c <- lm(PerToFastest ~ YearBlock * works * engine * SessionCondition, data = f1_fast_107)
+model_c <- lm(PerToFastest ~ works * engine * SessionCondition, data = f1_fast_107) # used for 3-way contrast
 summary(model_c)
 
-model_d <- lm(PerToFastest ~ YearBlock * works * engine + SessionCondition + Throttle_Centered, data = f1_fast_107)
+model_d <- lm(PerToFastest ~ YearBlock * works * engine, data = f1_fast_107) # used for 3-way contrast
 summary(model_d)
+anova(model_d)
 
 summary(aov(model_b))
 summary(aov(model_d))
@@ -216,6 +205,8 @@ boxplot(res_a ~ engine, data = f1_fast_dry_107)
 boxplot(res_b ~ YearBlock, data = f1_fast_107)
 boxplot(res_b ~ works, data = f1_fast_107)
 boxplot(res_b ~ engine, data = f1_fast_107)
+boxplot(res_b ~ SessionCondition, data = f1_fast_107)
+
 #
 boxplot(res_c ~ YearBlock, data = f1_fast_107)
 boxplot(res_c ~ works, data = f1_fast_107)
@@ -243,9 +234,10 @@ summary(reduced_model_v10p)
 reduced_model_v12p <- step(model_v12p, direction = "both")
 summary(reduced_model_v12p)
 
-reduced_model_b_log <- step(model_b_log, direction = "both")
-summary(reduced_model_b_log)
+reduced_model_b <- step(model_b, direction = "both")
+summary(reduced_model_b)
 
+#### end new 4/20/26
 
 ######
 f1_2018 <- f1_fast_dry_107 %>% filter(Year == 2018)
@@ -290,12 +282,34 @@ fit <- cv.glmnet(x, y_vec, alpha = 1)
 # coefficients
 coef(fit, s = "lambda.min")
 
-# check contrasts
+
+##### #new 4/20/26
+# check contrasts - 4 way
 # Calculate the means for every combination
-m_grid <- emmeans(model_b, ~ works | YearBlock * engine + SessionCondition)
+m_grid <- emmeans(model_b, ~ works | YearBlock * engine * SessionCondition)
 
 # Contrast Works vs Customer for 2018 Ferrari Dry
 contrast(m_grid, "pairwise", at = list(YearBlock="2018", engine="Ferrari", SessionCondition="dry"), adjust = "bonferroni")
+
+##
+
+# check contrasts - session condition
+m_grid <- emmeans(model_c, ~ SessionCondition | works * engine)
+# Contrast Works vs Customer for 2018 Ferrari Dry
+contrast(m_grid, "pairwise", at = list(SessionCondition="dry", engine="Ferrari"), adjust = "bonferroni")
+
+m_grid <- emmeans(model_c, ~ works | SessionCondition * engine)
+contrast(m_grid, "pairwise", at = list(SessionCondition="dry", engine="Ferrari"), adjust = "bonferroni")
+
+##
+
+# check contrasts - works | engine * year
+m_grid <- emmeans(model_d, ~ works | YearBlock * engine)
+# Contrast Works vs Customer for 2018 Ferrari Dry
+contrast(m_grid, "pairwise", at = list(SessionCondition="dry", engine="Ferrari"), adjust = "bonferroni")
+#####
+
+
 
 ### t-test of session conditions vs % throttle
 t.test(f1_fast_dry_107$FullThrottlePct, f1_fast_wet_107$FullThrottlePct)
