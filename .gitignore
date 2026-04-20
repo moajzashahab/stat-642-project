@@ -2,3 +2,6 @@ cache/
 *.sqlite
 .DS_Store
 .ipynb_checkpoints/
+.RData
+.Rhistory
+.git
