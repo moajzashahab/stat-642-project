@@ -23,9 +23,9 @@ df <- read.csv("data/modeling_processed.csv")
 
 ```{r}
 # convert categorical columns to factors
-df_fast$works <- as.factor(df_fast$works)
-df_fast$engine <- as.factor(df_fast$engine)
-df_fast$Year <- as.factor(df_fast$Year)
+df$works <- as.factor(df$works)
+df$engine <- as.factor(df$engine)
+df$Year <- as.factor(df$Year)
 
 # standardize performance within each race and flag extreme outliers
 df <- df %>%
