@@ -8,9 +8,11 @@ output: html_document
 ```{r libraries}
 library(car)
 library(lme4)
+library(lmtest)
 library(glmnet)
 library(ggplot2)
 library(emmeans)
+library(sandwich)
 library(tidyverse)
 library(lubridate)
 ```
@@ -64,11 +66,21 @@ car::Anova(model_v1, type=2)
 
 ```{r check assumptions}
 par(mfrow = c(2,2))
-plot(model_v1)          # get plots
-car::ncvTest(model_v1)  # heteroskedasticity
-car::vif(model_v1)      # multicollinearity
+# get plots
+plot(model_v1)              
+# normality
+shapiro.test(residuals(model_v1))     
+# equal variance
+car::leveneTest(PerToFastest ~ works * engine, data = df_fast)
+# independence
+lmtest::dwtest(model_v1)
 ```
-- residuals aren’t perfectly normal (some skew in the upper tail) and there’s evidence of non-constant variance. no issues with multicollinearity or influential points (already removed slow drivers.)
+- not normal, not constant variance, not independent
+
+```{r}
+coeftest(model_v1, vcov = vcovHC(model_v1, type = "HC1"))
+```
+
 
 ### model 2: effect of team status, engine, and year on gap, controlling for throttle
 
