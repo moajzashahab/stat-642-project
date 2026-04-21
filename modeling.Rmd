@@ -77,11 +77,6 @@ lmtest::dwtest(model_v1)
 ```
 - not normal, not constant variance, not independent
 
-```{r}
-coeftest(model_v1, vcov = vcovHC(model_v1, type = "HC1"))
-```
-
-
 ### model 2: effect of team status, engine, and year on gap, controlling for throttle
 
 ```{r}
@@ -121,10 +116,19 @@ emmeans(model_v3, pairwise ~ works | Year * engine)
 - for customer teams, ferrari and mercedes have higher gaps, while renault has the lowest gap
 - for works teams, gaps are generally smaller but vary more by engine
 
+### model 4: square-root transformation response to address variance issues
+
+```{r}
+# fit model
+model_v4 <- lm(sqrt(PerToFastest) ~ Year * works * engine, data = df_fast)
+# model summary
+summary(model_v4)
+# ANOVA table
+car::Anova(model_v4, type = 2)
+```
+
 ### model comparison
 
 ```{r}
-AIC(model_v1, model_v2, model_v3)
+AIC(model_v1, model_v2, model_v3, model_v4)
 ```
-
-- model 2 is slightly better than model 1 but model 3 is better than both
