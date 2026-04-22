@@ -8,6 +8,7 @@ output: html_document
 ```{r libraries}
 library(car)
 library(lme4)
+library(MASS)
 library(lmtest)
 library(glmnet)
 library(ggplot2)
@@ -86,6 +87,20 @@ lmtest::dwtest(model_v1)
 ```
 
 - residuals deviate from normality, evidence of heteroskedasticity (non-constant variance), evidence of positive autocorrelation (violates independence)
+
+```{r do Box–Cox}
+# have to add constant to response because it has to be positive and we have 0s
+model_v1_shift <- lm(PerToFastest + 1e-6 ~ works + engine + Year, data = df_fast)
+
+# run box-cox
+bc <- boxcox(model_v1_shift)
+lambda_opt <- bc$x[which.max(bc$y)]
+
+# output lambda
+lambda_opt
+```
+
+- lambda of 0.5050505 means we should use a sqrt transformation
 
 ### model 2: square-root transformation response to address variance issues
 
