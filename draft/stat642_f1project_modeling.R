@@ -58,12 +58,12 @@ print(cor_value)
 ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = Track.Length..km.)) +
   geom_point() +
   geom_smooth(method = "lm",
-              color = "blue",
+              color = "yellow",
               se = TRUE) +
-  theme_minimal() +
+  theme_dark() +
   labs(title = paste("Correlation:", round(cor_value, 2)))
 
-# Full Throttle vs Per to Fastest
+# Full Throttle vs Per to Fastest (included)
 cor_value <- cor(f1_fast_dry_107$FullThrottlePct, f1_fast_dry_107$PerToFastest, use = "complete.obs")
 print(cor_value)
 
@@ -71,10 +71,36 @@ print(cor_value)
 ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
   geom_point() +
   geom_smooth(method = "lm",
-              color = "blue",
+              color = "yellow",
               se = TRUE) +
-  theme_minimal() +
+  theme_dark() +
   labs(title = paste("Correlation:", round(cor_value, 2)))
+
+# plot it in better colors
+ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              color = "yellow",
+              se = TRUE) +
+  theme_dark() +
+  theme(
+    # Invert the panel and plot background to pitch black
+    panel.background = element_rect(fill = "grey69"),
+    plot.background = element_rect(fill = "grey20", color = "black"),
+    
+    # Invert the grid lines to a subtle dark grey
+    panel.grid.major = element_line(color = "grey20"),
+    panel.grid.minor = element_line(color = "grey10"),
+    
+    # Make axes and labels white for high contrast
+    axis.title = element_text(color = "grey90", size = 14, face = "bold"),
+    axis.text = element_text(color = "grey90", size = 12),
+    axis.ticks = element_line(color = "grey90"),
+    
+    # Remove the grey box around the legend if applicable
+    legend.background = element_rect(fill = "black"),
+    legend.text = element_text(color = "white")
+  )
 
 # split based on works
 ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
@@ -92,7 +118,7 @@ ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
   scale_fill_gradient(low = "blue", high = "red") +
   theme_minimal()
 
-# this is probably the grap we want
+# this is probably the graph we want
 ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
   geom_point() +
   geom_smooth(method = "lm",
@@ -100,6 +126,66 @@ ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
               se = TRUE) +
   facet_grid(engine ~ works) +
   theme_minimal()
+
+ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              color = "yellow",
+              se = TRUE) +
+  facet_grid(engine ~ works) +
+  theme_dark() +
+  theme(
+    # Invert the panel and plot background to pitch black
+    panel.background = element_rect(fill = "grey69"),
+    plot.background = element_rect(fill = "grey20", color = "black"),
+    
+    # Invert the grid lines to a subtle dark grey
+    panel.grid.major = element_line(color = "grey20"),
+    panel.grid.minor = element_line(color = "grey10"),
+    
+    # Make axes and labels white for high contrast
+    axis.title = element_text(color = "grey90", size = 14, face = "bold"),
+    axis.text = element_text(color = "grey90", size = 12),
+    axis.ticks = element_line(color = "grey90"),
+    
+    # Remove the grey box around the legend if applicable
+    legend.background = element_rect(fill = "black"),
+    legend.text = element_text(color = "white")
+  )
+
+
+ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              color = "blue",
+              se = TRUE) +
+  theme_minimal() +
+  labs(title = paste("Correlation:", round(cor_value, 2)))
+
+ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = PerToFastest)) +
+  geom_point() +
+  geom_smooth(method = "lm",
+              color = "yellow",
+              se = TRUE) +
+  theme_dark() +
+  theme(
+    # Invert the panel and plot background to pitch black
+    panel.background = element_rect(fill = "grey69"),
+    plot.background = element_rect(fill = "grey20", color = "black"),
+    
+    # Invert the grid lines to a subtle dark grey
+    panel.grid.major = element_line(color = "grey20"),
+    panel.grid.minor = element_line(color = "grey10"),
+    
+    # Make axes and labels white for high contrast
+    axis.title = element_text(color = "grey90", size = 14, face = "bold"),
+    axis.text = element_text(color = "grey90", size = 12),
+    axis.ticks = element_line(color = "grey90"),
+    
+    # Remove the grey box around the legend if applicable
+    legend.background = element_rect(fill = "black"),
+    legend.text = element_text(color = "white")
+  )
 
 ggplot(f1_fast_dry_107, aes(x = FullThrottlePct, y = GapToFastest)) +
   geom_point() +
@@ -328,13 +414,62 @@ t.test(f1_fast_wet_107$FullThrottlePct, f1_fast_mixed_107$PerToFastest)
 # p-value < 0.0001 for wet v mixed
 
 ggplot(f1_fast_107, aes(x = SessionCondition, y = FullThrottlePct)) +
-  geom_violin(trim = FALSE, fill = "lightblue") +
+  geom_violin(trim = FALSE, fill = "yellow") +
   geom_boxplot(width = 0.3) +
   geom_jitter(width = 0.01, alpha = 0.5) +
-  theme_minimal()
+  theme_dark()
 
 ggplot(f1_fast_107, aes(x = SessionCondition, y = PerToFastest)) +
   geom_violin(trim = FALSE, fill = "lightblue") +
   geom_boxplot(width = 0.3) +
   geom_jitter(width = 0.01, alpha = 0.5) +
   theme_minimal()
+
+#same plots, only cooler
+ggplot(f1_fast_107, aes(x = SessionCondition, y = FullThrottlePct)) +
+  geom_violin(trim = FALSE, fill = "#FFFF00", color = "black", linewidth = 0.7) + 
+  geom_boxplot(width = 0.4, fill = "white", color = "black", outlier.shape = NA) +
+  geom_jitter(width = 0.05, alpha = 0.6, color = "grey15") +
+  theme_dark() +
+  theme(
+    # Invert the panel and plot background to pitch black
+    panel.background = element_rect(fill = "grey69"),
+    plot.background = element_rect(fill = "grey20", color = "black"),
+    
+    # Invert the grid lines to a subtle dark grey
+    panel.grid.major = element_line(color = "grey20"),
+    panel.grid.minor = element_line(color = "grey10"),
+    
+    # Make axes and labels white for high contrast
+    axis.title = element_text(color = "grey80", size = 14, face = "bold"),
+    axis.text = element_text(color = "grey80", size = 12),
+    axis.ticks = element_line(color = "grey80"),
+    
+    # Remove the grey box around the legend if applicable
+    legend.background = element_rect(fill = "black"),
+    legend.text = element_text(color = "white")
+  )
+
+ggplot(f1_fast_107, aes(x = SessionCondition, y = PerToFastest)) +
+  geom_violin(trim = FALSE, fill = "#FFFF00", color = "black", linewidth = 0.7) + 
+  geom_boxplot(width = 0.4, fill = "white", color = "black", outlier.shape = NA) +
+  geom_jitter(width = 0.05, alpha = 0.6, color = "grey15") +
+  theme_dark() +
+  theme(
+    # Invert the panel and plot background to pitch black
+    panel.background = element_rect(fill = "grey69"),
+    plot.background = element_rect(fill = "grey20", color = "black"),
+    
+    # Invert the grid lines to a subtle dark grey
+    panel.grid.major = element_line(color = "grey20"),
+    panel.grid.minor = element_line(color = "grey10"),
+    
+    # Make axes and labels white for high contrast
+    axis.title = element_text(color = "grey80", size = 14, face = "bold"),
+    axis.text = element_text(color = "grey80", size = 12),
+    axis.ticks = element_line(color = "grey80"),
+    
+    # Remove the grey box around the legend if applicable
+    legend.background = element_rect(fill = "black"),
+    legend.text = element_text(color = "white")
+  )
